@@ -57,10 +57,10 @@ class Docente(Persona):
 
 
 if __name__ == '__main__':
-    d1 = Docente(cedula='0900000080', nombre='JAME', apellido='YEPEZ', email='JYEPEZ@gmail.com',
+    d1 = Docente(cedula='0900000080', nombre='DARLING', apellido='MEDINA', email='DMEDINA@gmail.com',
                  telefono='0980808080', direccion='manabi', numero_libros=0, activo=True, carrera='GIG',
                  titulo_3er_nivel='ING', titulo_4to_nivel=',MAE')
-    d2 = Docente(cedula='0912345678', nombre='LIVINGTON', apellido='GALLARDO', email='LGALLARDO@gmail.com',
+    d2 = Docente(cedula='0912345678', nombre='BRYAN', apellido='REVELO', email='RBRYAN@gmail.com',
                  telefono='0970707070', direccion='pedro carbo', numero_libros=0, activo=True, carrera='GIG',
                  titulo_3er_nivel='ING', titulo_4to_nivel=',MAE')
 
