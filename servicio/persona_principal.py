@@ -52,22 +52,11 @@ class PersonaPrincipal(QMainWindow):
           persona.estatura = self.ui.sp_estatura.text()
           persona.peso = self.ui.line_peso.text()
           persona.f_nacimiento = self.ui.line_Fnacimiento.text()
-
-          #insertar en la base de datos al estudiante
           respuesta = None
           respuesta = Estudiantedao.insertar_estudiante(persona)
 
 
-        #archivo = None
-        #try:
-          #  archivo = open('archivo.txt', mode='a')
-          # archivo.write(persona.__str__())
-        # archivo.write('\n')
-        #except Exception as e:
-        # print('No se pudo grabar.')
-        #finally:
-          # if archivo:
-        # archivo.close()
+        
       if respuesta['exito']:
         self.ui.line_nombre.setText('')
         self.ui.line_apellido.setText('')
@@ -97,8 +86,6 @@ class PersonaPrincipal(QMainWindow):
       estudiantes = Estudiantedao.seleccionar_estudiantes()
       estaturas = [estudiante.estatura for estudiante in estudiantes]
       promedio_estatura = sum(estaturas) / len(estaturas)
-
-      # Ordenando las estaturas y calculando la mediana
       estaturas_sorted = sorted(estaturas)
       n = len(estaturas_sorted)
       if n % 2 == 0:  # Cantidad par de estaturas
@@ -106,12 +93,10 @@ class PersonaPrincipal(QMainWindow):
       else:  # Cantidad impar de estaturas
           mediana_estatura = estaturas_sorted[n // 2]
 
-      # Calculando la moda
+      
       estatura_counts = {estatura: estaturas.count(estatura) for estatura in estaturas}
       max_count = max(estatura_counts.values())
       moda_estatura = [estatura for estatura, count in estatura_counts.items() if count == max_count]
-
-      # Calculando las estaturas mínimo y máximo
       min_estatura = min(estaturas)
       max_estatura = max(estaturas)
 
@@ -125,8 +110,6 @@ class PersonaPrincipal(QMainWindow):
       estudiantes = Estudiantedao.seleccionar_estudiantes()
       pesos = [estudiante.peso for estudiante in estudiantes]
       promedio_peso = sum(pesos) / len(pesos)
-
-      # Ordenando los pesos y calculando la mediana
       pesos_sorted = sorted(pesos)
       n = len(pesos_sorted)
       if n % 2 == 0:  # Cantidad par de pesos
@@ -134,12 +117,9 @@ class PersonaPrincipal(QMainWindow):
       else:  # Cantidad impar de pesos
           mediana_peso = pesos_sorted[n // 2]
 
-      # Calculando la moda
       peso_counts = {peso: pesos.count(peso) for peso in pesos}
       max_count = max(peso_counts.values())
       moda_peso = [peso for peso, count in peso_counts.items() if count == max_count]
-
-      # Calculando los pesos mínimo y máximo
       min_peso = min(pesos)
       max_peso = max(pesos)
 
@@ -159,10 +139,7 @@ class PersonaPrincipal(QMainWindow):
           edad = fecha_actual.year - fecha.year - ((fecha_actual.month, fecha_actual.day) < (fecha.month, fecha.day))
           edades.append(edad)
 
-      # Calculando el promedio de edad
       promedio_edad = sum(edades) / len(edades)
-
-      # Ordenando las edades y calculando la mediana
       edades_sorted = sorted(edades)
       n = len(edades_sorted)
       if n % 2 == 0:  # Cantidad par de edades
@@ -170,17 +147,12 @@ class PersonaPrincipal(QMainWindow):
       else:  # Cantidad impar de edades
           mediana_edad = edades_sorted[n // 2]
 
-      # Calculando la moda
       edad_counts = {edad: edades.count(edad) for edad in edades}
       max_count = max(edad_counts.values())
       moda_edad = [edad for edad, count in edad_counts.items() if count == max_count]
 
-      # Calculando la edad máxima y mínima
       max_edad = max(edades)
       min_edad = min(edades)
-
-      #for estudiante, edad in zip(estudiantes, edades):
-         #print(f'Estudiante: {estudiante.nombre}, Edad: {edad} años')
 
       print(f'El promedio de edades es: {promedio_edad:.2f} años')
       print(f'La mediana de edades es: {mediana_edad} años')
