@@ -23,8 +23,8 @@ class Libro(Material):
 
 
 if __name__ == "__main__":
-    libro1 = Libro("12345", "Jame Yepez", "Libro CULPABLES", 2023, "Editorial 345", True, 10, "Tapa dura")
-    libro2 = Libro("67890", "Dome Anchundia", "Libro ORGULLO Y PREJUICIO", 2022, "Editorial 890J8", False, 5,
+    libro1 = Libro("12345", "KATHERIN", "Libro PERDIDAS", 2023, "Editorial 275", True, 10, "Tapa dura")
+    libro2 = Libro("67890", "DARLING", "Libro PERFECTOS MENTIROSOS", 2022, "Editorial 890J8", False, 5,
                    "Tapa blanda")
 
     # Acceder a los atributos de los libros
@@ -48,16 +48,16 @@ if __name__ == "__main__":
     print(libro2.tipo_pasta)
     print()
 
-    # Modificar atributos
+   
     libro1.actualizar_disponibilidad(False)
     libro2.tipo_pasta = "Pasta dura"
 
-    # Acceder a los atributos modificados
+   
     print(libro1.disponible)
     print(libro2.tipo_pasta)
     print()
 
-    # Acceder al contador de libros
+    
     print(Libro.contador_libro)
 
 
