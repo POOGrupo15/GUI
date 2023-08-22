@@ -26,7 +26,7 @@ class Estudiantedao:
                 mensaje = 'Ingreso Exitoso'
         except IntegrityError as e:
             flag_exito = False
-            # print('La cedula que intenta ingresar ya existe')
+            
 
             if e.__str__().find('cedula') > 0:
                 print('Cédula ya ingresada.')
@@ -100,16 +100,6 @@ class Estudiantedao:
             return list_estudiantes
 
 if __name__ == '__main__':
-    #e1 = Estudiante()
-    #e1.cedula = '0987654311'
-    #e1.nombre = 'Lola'
-    #e1.apellido = 'Cruz'
-    #e1.email = 'lolc@gmail.com'
-    # e1.carrera = 'ADM'
-    #e1.activo = True
-    #Estudiantedao.insertar_estudiante(e1)
-    #persona_encontrada = Estudiantedao.selecionar_por_cedula(e1)
-    #print(persona_encontrada)
     estudiantes = Estudiantedao.seleccionar_estudiantes()
     for estudiante in estudiantes:
         print(estudiante)
