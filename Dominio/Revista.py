@@ -23,9 +23,9 @@ class Revista(Material):
 
 
 if __name__ == "__main__":
-    revista = Revista("09456", "Jame Yepez", "Revista Espejo", 2023, "Editorial 908", True, 10, "Moda")
-    revista2 = Revista("67890", "Dome Anchundia", "Revista Tecnology", 2022, "Editorial 876", False, 5, "Tecnología")
-    revista3 = Revista("36533", "Livintong Gallardo", "Revista De Inteligencia Artificial", 2021, "Editorial 430",
+    revista = Revista("09456", "KATHERIN SANCHEZ", "Revista Espejo", 2023, "Editorial 908", True, 10, "Moda")
+    revista2 = Revista("67890", "BRYAN REVELO", "Revista Tecnology", 2022, "Editorial 876", False, 5, "Tecnología")
+    revista3 = Revista("36533", "DARLING MEDINA", "Revista De Inteligencia Artificial", 2021, "Editorial 430",
                        False, 8, "Inteligencia Artificial")
     print(revista.titulo)
     print(revista2.titulo)
